@@ -3,6 +3,7 @@ import time
 
 switch_pins = [4, 5, 6, 12, 13, 16, 17, 18, 19, 20, 21, 22]  # Example GPIOs
 
+
 GPIO.setmode(GPIO.BCM)
 for pin in switch_pins:
     GPIO.setup(pin, GPIO.OUT)
