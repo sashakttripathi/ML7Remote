@@ -7,12 +7,12 @@ switch_pins = [4, 5, 6, 12, 13, 16, 17, 18, 19, 20, 21, 22]  # Example GPIOs
 GPIO.setmode(GPIO.BCM)
 for pin in switch_pins:
     GPIO.setup(pin, GPIO.OUT)
-    GPIO.output(pin, GPIO.LOW)  # Ensure all switches are off
+    GPIO.output(pin, GPIO.HIGH)  # Ensure all switches are off
 
 def press_button(pin, duration=0.2):
-    GPIO.output(pin, GPIO.HIGH)  # "Press" the switch
+    GPIO.output(pin, GPIO.LOW)  # "Press" the switch
     time.sleep(duration)
-    GPIO.output(pin, GPIO.LOW)   # "Release" the switch
+    GPIO.output(pin, GPIO.HIGH)   # "Release" the switch
 
 while True:
     if input("Press Enter to simulate button press (or 'q' to quit): ") == 'q':
